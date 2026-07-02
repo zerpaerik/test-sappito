@@ -55,7 +55,7 @@ export default function ListadoPage() {
       ) : filtradas.length === 0 ? (
         <SinResultados />
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid animate-[fade-in_0.3s_ease-out] gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtradas.map((solicitud) => (
             <SolicitudCard key={solicitud.id} solicitud={solicitud} />
           ))}

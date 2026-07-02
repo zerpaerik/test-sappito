@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description: "Mini-portal de solicitudes de crédito vehicular",
 };
 
+// Fija el tema antes del primer render para evitar parpadeo (flash) al cargar.
+const scriptTema = `try{var t=localStorage.getItem('tema');if(t==='oscuro'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,9 +30,11 @@ export default function RootLayout({
   return (
     <html
       lang="es"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full`}
     >
       <body className="min-h-full bg-zinc-50 font-sans text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100">
+        <script dangerouslySetInnerHTML={{ __html: scriptTema }} />
         <ToastProvider>
           <Header />
           <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>

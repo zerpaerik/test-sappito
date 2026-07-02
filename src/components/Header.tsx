@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Car, Plus } from "lucide-react";
 import { botonPrimario } from "@/components/ui/estilos";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Header() {
   return (
@@ -16,10 +17,13 @@ export function Header() {
           CrediApp
         </Link>
 
-        <Link href="/nueva" className={botonPrimario}>
-          <Plus className="h-4 w-4" />
-          Nueva solicitud
-        </Link>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link href="/nueva" className={botonPrimario}>
+            <Plus className="h-4 w-4" />
+            Nueva solicitud
+          </Link>
+        </div>
       </div>
     </header>
   );
