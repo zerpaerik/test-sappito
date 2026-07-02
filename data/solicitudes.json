@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "cliente": "Alejandro Mujica",
+    "cedula": "V-5533646",
+    "email": "amujica@example.com",
+    "vehiculo": "Toyota Land Cruiser",
+    "precioVenta": 25000,
+    "inicial": 5000,
+    "estado": "En revisión"
+  },
+  {
+    "id": "2",
+    "cliente": "María Pérez",
+    "cedula": "V-12987654",
+    "email": "mperez@example.com",
+    "vehiculo": "Chevrolet Aveo",
+    "precioVenta": 14000,
+    "inicial": 4000,
+    "estado": "Aprobada"
+  },
+  {
+    "id": "3",
+    "cliente": "José Rodríguez",
+    "cedula": "V-9876543",
+    "email": "jrodriguez@example.com",
+    "vehiculo": "Ford EcoSport",
+    "precioVenta": 19500,
+    "inicial": 3000,
+    "estado": "Borrador"
+  },
+  {
+    "id": "4",
+    "cliente": "Luisa Fernández",
+    "cedula": "V-15234876",
+    "email": "lfernandez@example.com",
+    "vehiculo": "Kia Picanto",
+    "precioVenta": 12000,
+    "inicial": 6000,
+    "estado": "Rechazada"
+  },
+  {
+    "id": "5",
+    "cliente": "Carlos Blanco",
+    "cedula": "V-8123456",
+    "email": "cblanco@example.com",
+    "vehiculo": "Hyundai Tucson",
+    "precioVenta": 28000,
+    "inicial": 7000,
+    "estado": "En revisión"
+  }
+]
