@@ -6,15 +6,23 @@ import { Filtros, type FiltroEstado } from "@/components/Filtros";
 import { SolicitudCard } from "@/components/SolicitudCard";
 import { useSolicitudes } from "@/hooks/useSolicitudes";
 
+/** Normaliza texto para buscar sin distinguir mayúsculas ni acentos. */
+function normalizar(texto: string): string {
+  return texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "");
+}
+
 export default function ListadoPage() {
   const { solicitudes, cargando, error, recargar } = useSolicitudes();
   const [busqueda, setBusqueda] = useState("");
   const [estado, setEstado] = useState<FiltroEstado>("Todas");
 
   const filtradas = useMemo(() => {
-    const texto = busqueda.trim().toLowerCase();
+    const texto = normalizar(busqueda.trim());
     return solicitudes.filter((solicitud) => {
-      const coincideCliente = solicitud.cliente.toLowerCase().includes(texto);
+      const coincideCliente = normalizar(solicitud.cliente).includes(texto);
       const coincideEstado = estado === "Todas" || solicitud.estado === estado;
       return coincideCliente && coincideEstado;
     });
