@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Cargando, ErrorVista, SinResultados, Vacio } from "@/components/estados";
 import { Filtros, type FiltroEstado } from "@/components/Filtros";
 import { SolicitudCard } from "@/components/SolicitudCard";
 import { useSolicitudes } from "@/hooks/useSolicitudes";
@@ -18,6 +19,8 @@ export default function ListadoPage() {
       return coincideCliente && coincideEstado;
     });
   }, [solicitudes, busqueda, estado]);
+
+  const hayContenido = !cargando && !error;
 
   return (
     <div className="flex flex-col gap-6">
@@ -37,21 +40,20 @@ export default function ListadoPage() {
         onEstadoChange={setEstado}
       />
 
-      <p className="text-sm text-zinc-500 dark:text-zinc-400">
-        {filtradas.length} {filtradas.length === 1 ? "resultado" : "resultados"}
-      </p>
+      {hayContenido && solicitudes.length > 0 && (
+        <p className="text-sm text-zinc-500 dark:text-zinc-400">
+          {filtradas.length} {filtradas.length === 1 ? "resultado" : "resultados"}
+        </p>
+      )}
 
       {cargando ? (
-        <p className="text-sm text-zinc-500">Cargando solicitudes…</p>
+        <Cargando />
       ) : error ? (
-        <div className="text-sm text-rose-600">
-          <p>{error}</p>
-          <button type="button" onClick={recargar} className="mt-2 underline">
-            Reintentar
-          </button>
-        </div>
+        <ErrorVista mensaje={error} onReintentar={recargar} />
+      ) : solicitudes.length === 0 ? (
+        <Vacio />
       ) : filtradas.length === 0 ? (
-        <p className="text-sm text-zinc-500">No hay solicitudes para mostrar.</p>
+        <SinResultados />
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtradas.map((solicitud) => (

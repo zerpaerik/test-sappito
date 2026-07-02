@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Car, Plus } from "lucide-react";
+import { botonPrimario } from "@/components/ui/estilos";
 
 export function Header() {
   return (
@@ -15,10 +16,7 @@ export function Header() {
           CrediApp
         </Link>
 
-        <Link
-          href="/nueva"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >
+        <Link href="/nueva" className={botonPrimario}>
           <Plus className="h-4 w-4" />
           Nueva solicitud
         </Link>
