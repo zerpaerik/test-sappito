@@ -169,11 +169,11 @@ export function SolicitudForm() {
         </Campo>
       </div>
 
-      <div className="flex items-center justify-between rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-3 dark:border-indigo-900 dark:bg-indigo-950/40">
-        <span className="text-sm font-medium text-indigo-900 dark:text-indigo-200">
+      <div className="flex items-center justify-between rounded-lg border border-red-200 bg-red-50 px-4 py-3 dark:border-red-900 dark:bg-red-950/40">
+        <span className="text-sm font-medium text-red-900 dark:text-red-200">
           Monto a financiar
         </span>
-        <span className="text-lg font-semibold text-indigo-700 tabular-nums dark:text-indigo-300">
+        <span className="text-lg font-semibold text-red-700 tabular-nums dark:text-red-300">
           {formatearUSD(monto)}
         </span>
       </div>

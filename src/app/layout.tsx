@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CrediApp — Solicitudes de crédito",
+  title: "Toyota Créditos — Solicitudes de crédito",
   description: "Mini-portal de solicitudes de crédito vehicular",
 };
 

@@ -21,7 +21,7 @@ export default function DetallePage({
     <div className="mx-auto flex max-w-2xl flex-col gap-6">
       <Link
         href="/"
-        className="inline-flex w-fit items-center gap-1 text-sm text-zinc-500 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
+        className="inline-flex w-fit items-center gap-1 text-sm text-zinc-500 transition-colors hover:text-red-600 dark:text-zinc-400 dark:hover:text-red-400"
       >
         <ArrowLeft className="h-4 w-4" />
         Volver al listado
@@ -67,11 +67,11 @@ function Detalle({ solicitud }: { solicitud: Solicitud }) {
         <Fila etiqueta="Inicial" valor={formatearUSD(solicitud.inicial)} />
       </dl>
 
-      <div className="mt-4 flex items-center justify-between rounded-lg bg-indigo-50 px-4 py-3 dark:bg-indigo-950/40">
-        <span className="text-sm font-medium text-indigo-900 dark:text-indigo-200">
+      <div className="mt-4 flex items-center justify-between rounded-lg bg-red-50 px-4 py-3 dark:bg-red-950/40">
+        <span className="text-sm font-medium text-red-900 dark:text-red-200">
           Monto a financiar
         </span>
-        <span className="text-xl font-semibold text-indigo-700 tabular-nums dark:text-indigo-300">
+        <span className="text-xl font-semibold text-red-700 tabular-nums dark:text-red-300">
           {formatearUSD(montoAFinanciar(solicitud))}
         </span>
       </div>

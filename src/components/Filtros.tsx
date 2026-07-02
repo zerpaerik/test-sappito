@@ -30,7 +30,7 @@ export function Filtros({
           onChange={(evento) => onBusquedaChange(evento.target.value)}
           placeholder="Buscar por cliente..."
           aria-label="Buscar por nombre de cliente"
-          className="w-full rounded-lg border border-zinc-300 bg-white py-2 pl-9 pr-3 text-sm outline-none placeholder:text-zinc-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 dark:border-zinc-700 dark:bg-zinc-900"
+          className="w-full rounded-lg border border-zinc-300 bg-white py-2 pl-9 pr-3 text-sm outline-none placeholder:text-zinc-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/30 dark:border-zinc-700 dark:bg-zinc-900"
         />
       </div>
 
@@ -45,7 +45,7 @@ export function Filtros({
               aria-pressed={activo}
               className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                 activo
-                  ? "bg-indigo-600 text-white"
+                  ? "bg-red-600 text-white"
                   : "bg-white text-zinc-600 ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-300 dark:ring-zinc-700 dark:hover:bg-zinc-800"
               }`}
             >

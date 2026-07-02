@@ -8,7 +8,7 @@ export default function NuevaSolicitudPage() {
       <header className="flex flex-col gap-2">
         <Link
           href="/"
-          className="inline-flex w-fit items-center gap-1 text-sm text-zinc-500 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
+          className="inline-flex w-fit items-center gap-1 text-sm text-zinc-500 transition-colors hover:text-red-600 dark:text-zinc-400 dark:hover:text-red-400"
         >
           <ArrowLeft className="h-4 w-4" />
           Volver al listado

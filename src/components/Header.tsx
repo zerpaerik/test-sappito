@@ -11,10 +11,10 @@ export function Header() {
           href="/"
           className="flex items-center gap-2 text-lg font-semibold tracking-tight"
         >
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-indigo-600 text-white">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-red-600 text-white">
             <Car className="h-5 w-5" />
           </span>
-          CrediApp
+          Toyota Créditos
         </Link>
 
         <div className="flex items-center gap-2">
