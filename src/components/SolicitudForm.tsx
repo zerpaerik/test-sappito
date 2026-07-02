@@ -16,6 +16,7 @@ import {
 } from "@/lib/schema";
 import { montoAFinanciar } from "@/lib/types";
 import { botonPrimario, botonSecundario, campoInput } from "@/components/ui/estilos";
+import { useToast } from "@/components/ui/Toast";
 
 /** Campo de formulario: etiqueta + control + mensaje de ayuda o error. */
 function Campo({
@@ -48,6 +49,7 @@ function Campo({
 
 export function SolicitudForm() {
   const router = useRouter();
+  const { mostrar } = useToast();
   const [errorEnvio, setErrorEnvio] = useState<string | null>(null);
 
   const {
@@ -76,6 +78,7 @@ export function SolicitudForm() {
     setErrorEnvio(null);
     try {
       await solicitudesApi.crear(datos);
+      mostrar("Solicitud creada correctamente", "exito");
       router.push("/");
     } catch (error) {
       setErrorEnvio(
